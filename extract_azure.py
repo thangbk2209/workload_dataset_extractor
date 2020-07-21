@@ -26,7 +26,7 @@ colnames = ['timestamp', 'cpu']
 usecols = [0, 4]
 
 # results_folder_path = '%s/' % (RESULTS_DIR)
-INPUT_DIR = '/root/thangbk2209/thesis/datasets/azure'
+INPUT_DIR = '/root/thangbk2209/thesis/datasets/azure/'
 results_folder_path = '/root/thangbk2209/thesis/datasets/azure_resource'
 
 start_vs_end_time_with_job_id_all_part = []
