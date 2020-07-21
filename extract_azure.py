@@ -69,5 +69,4 @@ for file_name in os.listdir(INPUT_DIR):
         all_resource_data = np.array(extract_data_file)
     else:
         all_resource_data = np.concatenate((all_resource_data, extract_data_file), axis=1)
-
-    all_resource_data.toPandas().to_csv('%s/%s' % (results_folder_path, file_name), index=False, header=None)
+    np.savetxt('%s/%s' % (results_folder_path, file_name), all_resource_data, delimiter=",")
