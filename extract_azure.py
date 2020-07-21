@@ -26,12 +26,16 @@ colnames = ['timestamp', 'cpu']
 usecols = [0, 4]
 
 # results_folder_path = '%s/' % (RESULTS_DIR)
-INPUT_DIR = '/root/thangbk2209/thesis/datasets/azure/'
-results_folder_path = '/root/thangbk2209/thesis/datasets/azure_resource'
+# INPUT_DIR = '/root/thangbk2209/thesis/datasets/azure/'
+# results_folder_path = '/root/thangbk2209/thesis/datasets/azure_resource'
+
+INPUT_DIR = '/Users/thangnguyen/Downloads/spark-2.4.0-bin-hadoop2.7/workload_dataset_extractor/azure/'
+results_folder_path = '/Users/thangnguyen/Downloads/spark-2.4.0-bin-hadoop2.7/workload_dataset_extractor/azure_resource'
 
 start_vs_end_time_with_job_id_all_part = []
 all_resource_data = None
 for file_name in os.listdir(INPUT_DIR):
+    print('===: %s%s' % (INPUT_DIR, file_name))
     df = (
         sql_context.read
         .format('com.databricks.spark.csv')
