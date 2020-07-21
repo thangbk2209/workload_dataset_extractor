@@ -33,7 +33,7 @@ results_folder_path = '/root/thangbk2209/thesis/datasets/azure_resource'
 # results_folder_path = '/Users/thangnguyen/Downloads/spark-2.4.0-bin-hadoop2.7/workload_dataset_extractor/azure_resource'
 
 start_vs_end_time_with_job_id_all_part = []
-all_resource_data = None
+
 for file_name in os.listdir(INPUT_DIR):
     print('===: %s%s' % (INPUT_DIR, file_name))
     df = (
@@ -49,6 +49,7 @@ for file_name in os.listdir(INPUT_DIR):
     time_stamp_extract = sql_context.sql(query)
     time_stamp_extract = time_stamp_extract.toPandas().values
     extract_data_file = []
+    all_resource_data = None
     for _timestamp_extract in time_stamp_extract:
 
         _timestamp_value = _timestamp_extract[0]
