@@ -15,12 +15,13 @@ for file_name in os.listdir(results_folder_path):
     usecols = [0, 1]
     azure_df = read_csv(
         file_path, header=None, index_col=False, names=colnames, usecols=usecols, engine='python')
-    _azure_data = azure_df.values.reshape(-1, 1)
+    _azure_data = azure_df.values
     
     if azure_data is None:
         azure_data = _azure_data
     else:
         print(azure_data.shape)
         print(_azure_data.shape)
-        azure_data = np.append(azure_data, _azure_data, axis=1)
+        azure_data = np.append(azure_data, _azure_data, axis=0)
 print(azure_data.shape)
+np.savetxt('azure.csv', azure_data, delimiter=",")
